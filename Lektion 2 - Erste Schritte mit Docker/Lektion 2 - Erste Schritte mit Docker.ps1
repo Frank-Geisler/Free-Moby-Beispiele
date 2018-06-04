@@ -1,7 +1,10 @@
 #============================================================================
 #	Datei:		Lektion 2 - Erste Schritte mit Docker.ps1
 #
-#	Summary:	In diesem Script 
+#	Summary:	In diesem Script werden grundsätzliche Docker Befehle 
+#               erklärt, es wird ein nginx Image vom Docker Hub heruntergeladen
+#               und auf Basis dieses Images wird ein neuer Container erstellt.
+#               Dieser wird dann gestoppt und wieder entfernt
 #
 #	Datum:		2018-06-04
 #
