@@ -1,8 +1,8 @@
 #============================================================================
-#	Datei:		Lektion 5 - Docker Compose.ps1
+#	Datei:		Lektion 6 - Docker Build.ps1
 #
-#	Summary:	Nochmal dieselbe Wordpress / MySQL Umgebung wie in Lektion 4,
-#               Dieses Mal aber mit einer Docker Compose Datei.
+#	Summary:	In dieser Datei wird gezeigt wie man mit Docker Build
+#               ein eigenes Image bauen kann
 #
 #	Datum:		2018-06-04
 #
@@ -21,54 +21,46 @@
 #============================================================================*/
 
 #----------------------------------------------------------------------------
-# 0. Verzeichnis wechseln
+# 0. Docker Image erstellen lassen
+#    Digest der erzeugt wird merken
 #----------------------------------------------------------------------------
-cd C:\temp
+docker image build C:\temp
 
 #----------------------------------------------------------------------------
-# 1. Schauen ob die yml auch wirklich in dem Verzeichnis liegt.
+# 1. Docker Container laufen lassen
+#    Auskommentierten Digest mit eigenem Digest ersetzen.
 #----------------------------------------------------------------------------
-dir *.yml
+docker container run #2a1a5abca6b2#
 
 #----------------------------------------------------------------------------
-# 2. Lädt alle Images vom Docker Hub herunter die benötigt werden.
+# 2. Docker Images anzeigen lassen
 #----------------------------------------------------------------------------
-docker-compose pull 
+docker image ls
 
 #----------------------------------------------------------------------------
-# 3. Umgebung mit docker-compose up bereitstellen
-#    -d - Detach: Löst Prozess vom PowerShell Fenster so dass man 
-#                 weiterarbeiten kann.
+# 3. Docker Image mit Tag versehen
+#    Auskommentierten Digest mit eigenem Digest ersetzen.
 #----------------------------------------------------------------------------
-docker-compose up -d 
+docker image tag #2a1a5abca6b2# hellodocker
 
 #----------------------------------------------------------------------------
-# 4. Alle Docker Compose Container anzeigen lassen
+# 4. Docker Images noch einmal anzeigen lassen. Das Image hat nun das
+#    Tag hellodocker
 #----------------------------------------------------------------------------
-docker-compose ps 
+docker image ls 
 
 #----------------------------------------------------------------------------
-# 5. Natürlich funktioniert auch docker container ps
+# 5. Man kann auch beim Erstellen des Docker Images ein Tag vergeben.
 #----------------------------------------------------------------------------
-docker container ps
+docker image build C:\temp -t basichelloworld
 
 #----------------------------------------------------------------------------
-# 6. Mit docker-compose logs die gesammelten log-Dateien der beiden Container
-#    anzeigen lassen
+# 6. Wenn man nun noch mal die Images anzeigt sieht man, dass das Image
+#    helloworld nun auch unter basichelloworld verfügbar ist
 #----------------------------------------------------------------------------
-docker-compose logs 
+docker image ls 
 
 #----------------------------------------------------------------------------
-# 7. Wordpress Seite anzeigen
+# 5. Aufräumen
 #----------------------------------------------------------------------------
-http://localhost:8080
-
-#----------------------------------------------------------------------------
-# 8. Docker-Compose Umgebung wieder beenden
-#----------------------------------------------------------------------------
-docker-compose stop 
-
-#----------------------------------------------------------------------------
-# 9. Docker-Compose Umgebung entfernen
-#----------------------------------------------------------------------------
-docker-compose rm
+docker image rm basichelloworld wordpress ubuntu mysql 
