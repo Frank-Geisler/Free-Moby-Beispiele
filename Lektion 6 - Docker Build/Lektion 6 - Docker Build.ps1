@@ -61,6 +61,36 @@ docker image build C:\temp -t basichelloworld
 docker image ls 
 
 #----------------------------------------------------------------------------
-# 5. Aufräumen
+# 7. Aufräumen
 #----------------------------------------------------------------------------
 docker image rm basichelloworld wordpress ubuntu mysql 
+
+#----------------------------------------------------------------------------
+# 8. Docker Image ls zeigt, dass es noch ein Image mit dem Namen
+#    hellodocker gibt
+#----------------------------------------------------------------------------
+docker image ls 
+
+#----------------------------------------------------------------------------
+# 9. Image löschen - schlägt fehl weil es noch einen Container gibt der auf 
+#    dem Image beruht
+#----------------------------------------------------------------------------
+docker image rm hellodocker
+
+#----------------------------------------------------------------------------
+# 10. Um den Container zu sehen müssen wir -a angeben, da der Container
+#     gerade nicht ausgeführt wird.
+#----------------------------------------------------------------------------
+docker container ls -a 
+
+#----------------------------------------------------------------------------
+# 11. Container löschen.
+#     An die Stelle des auskommentierten Digest kommt der Digest des
+#     Containers aus Befehl 10
+#----------------------------------------------------------------------------
+docker container rm #4a583817f7c5#
+
+#----------------------------------------------------------------------------
+# 12. Nun kann das Image auch gelöscht werden
+#----------------------------------------------------------------------------
+docker image rm hellodocker 
