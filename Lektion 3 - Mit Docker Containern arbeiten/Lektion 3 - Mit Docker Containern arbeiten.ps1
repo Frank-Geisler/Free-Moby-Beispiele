@@ -1,7 +1,10 @@
 #============================================================================
 #	Datei:		Lektion 3 - Mit Docker Containern arbeiten.ps1
 #
-#	Summary:	In diesem Script 
+#	Summary:	In diesem Script wird grundlegend gezeigt wie man Docker
+#               Container erzeugt, löscht, stoppt, weitelaufen lässt
+#               und wie man interaktiv per bash shell in einem Docker 
+#               Container Befehle ausführen kann.
 #
 #	Datum:		2018-06-04
 #
