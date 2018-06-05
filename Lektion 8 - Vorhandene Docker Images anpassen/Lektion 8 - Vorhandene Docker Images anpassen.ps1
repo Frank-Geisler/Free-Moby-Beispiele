@@ -1,8 +1,8 @@
 ﻿#============================================================================
 #	Datei:		Lektion 8 - Vorhandene Docker Images anpassen.ps1
 #
-#	Summary:	In dieser Datei wird gezeigt wie man mit Docker Build
-#               ein komplexes Image bauen kann.
+#	Summary:	In dieser Datei wird gezeigt wie man ein vorhandenes Docker 
+#               Image anpassen und um weitere Funktionen erweitern kann.
 #
 #	Datum:		2018-06-04
 #
