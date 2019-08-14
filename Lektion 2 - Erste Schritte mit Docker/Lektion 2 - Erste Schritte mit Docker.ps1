@@ -49,7 +49,7 @@ docker container run -d --name nginx-test -p 8080:80 nginx
 #----------------------------------------------------------------------------
 # 3. Alle Docker Container anzeigen die ausgeführt werden.
 #----------------------------------------------------------------------------
-docker container ps 
+docker container ls 
 
 #----------------------------------------------------------------------------
 # 4. Den Docker Container nginx-test wieder stoppen

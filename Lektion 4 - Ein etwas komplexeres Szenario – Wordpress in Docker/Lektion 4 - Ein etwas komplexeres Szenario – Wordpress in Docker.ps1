@@ -24,7 +24,7 @@
 #----------------------------------------------------------------------------
 # 0. mysql image besorgen
 #----------------------------------------------------------------------------
-docker image pull mysql 
+docker image pull mysql:5.5 
 
 #----------------------------------------------------------------------------
 # 1. Einen Container auf Basis des MySQL Images erstellen
@@ -35,7 +35,7 @@ docker image pull mysql
 #   MYSQL_DATABASE=wordpress : Name der MySQL Datenbank
 #   mysql - Image von dem der Docker Container erstellt werden soll.
 #----------------------------------------------------------------------------
-docker container run -d --name mysql -e MYSQL_ROOT_PASSWORD=wordpress -e MYSQL_DATABASE=wordpress mysql
+docker container run -d --name mysql -e MYSQL_ROOT_PASSWORD=wordpress -e MYSQL_DATABASE=wordpress mysql:5.5
 
 #----------------------------------------------------------------------------
 # 2. Überprüfen das der MySQL Container läuft
@@ -47,7 +47,7 @@ docker container ps
 #    Erst wenn da irgendwo "mysql: ready for connections" steht läuft der
 #    Container
 #----------------------------------------------------------------------------
-docker container log mysql 
+docker container logs mysql 
 
 #----------------------------------------------------------------------------
 # 4. Wordpress Image holen

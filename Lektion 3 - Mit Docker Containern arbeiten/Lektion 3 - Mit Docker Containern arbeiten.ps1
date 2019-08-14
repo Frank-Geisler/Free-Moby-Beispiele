@@ -49,14 +49,14 @@ docker container stop #9fb5bb67adc6#
 # 3. Laufende Docker Container anzeigen. Da unser Docker Container nicht
 #    mehr läuft wird er hier auch nicht angezeigt.
 #----------------------------------------------------------------------------
-docker container ps
+docker container ls
 
 #----------------------------------------------------------------------------
 # 4. Alle Docker Container anzeigen
 #    -a - ALL : mit dieser Option werden sowohl die laufenden wir auch die
 #               gestoppten Docker Container angezeigt
 #----------------------------------------------------------------------------
-docker container ps -a 
+docker container ls -a 
 
 #----------------------------------------------------------------------------
 # 5. Einen weitere Docker Container mit Ubuntu und /bin/bash Shell starten
